@@ -9,11 +9,11 @@
 
 [colors]
 ; {{{
-foreground=#fff
+foreground=#ffffff
 foreground-alt=${xrdb:base05:#ffffff}
 background=${xrdb:base00_ahtml:#000000}
 
-theme=${xrdb:theme:#ffffff}
+theme=${xrdb:theme:#222266}
 ; }}}
 
 [bar/kmarc]
