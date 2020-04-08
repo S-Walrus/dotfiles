@@ -4,9 +4,6 @@ export PATH=$PATH:/home/swalrus/Projects/Utils/
 export PATH=$PATH:/home/swalrus/.local/share/JetBrains/Toolbox/bin
 eval $(thefuck --alias)
 
-
-. /home/swalrus/torch/install/bin/torch-activate
-
 # Path to your oh-my-zsh installation.
   export ZSH="/home/swalrus/.oh-my-zsh"
 
