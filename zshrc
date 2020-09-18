@@ -1,8 +1,16 @@
+# aliases
+alias doc2pdf='pandoc -o out.pdf -f docx --latex-engine=xelatex --variable mainfont="PT Serif"'
+alias reconnect='nmcli radio wifi off && nmcli radio wifi on'
+alias ipy3=ipython3
+
+# add golang directory to path
+export PATH=$PATH:/usr/local/go/bin
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/home/swalrus/Projects/Utils/
-export PATH=$PATH:/home/swalrus/.local/share/JetBrains/Toolbox/bin
-eval $(thefuck --alias)
+#export PATH=$PATH:/home/swalrus/Projects/Utils/
+#export PATH=$PATH:/home/swalrus/.local/share/JetBrains/Toolbox/bin
+#eval $(thefuck --alias)
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/swalrus/.oh-my-zsh"
@@ -70,7 +78,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -98,4 +105,3 @@ source $ZSH/oh-my-zsh.sh
 
 autoload bashcompinit
 bashcompinit
-source /usr/share/bash-completion/completions/eopkg
