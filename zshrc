@@ -1,7 +1,11 @@
-# aliases
+# Aliases
+alias upgrade="sudo apt update && sudo apt upgrade"
 alias doc2pdf='pandoc -o out.pdf -f docx --latex-engine=xelatex --variable mainfont="PT Serif"'
 alias reconnect='nmcli radio wifi off && nmcli radio wifi on'
 alias ipy3=ipython3
+alias c="xclip -selection clipboard"
+alias v="nvim"
+alias q="exit"
 
 # add golang directory to path
 export PATH=$PATH:/usr/local/go/bin
