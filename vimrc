@@ -9,14 +9,25 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Raimondi/delimitMate'
-Plugin 'andreypopp/vim-colors-plain'
 Plugin 'tpope/vim-sleuth'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'chriskempson/base16-vim'
+
+Plugin 'w0rp/ale'
+let g:ale_sign_column_always = 1
+
+Plugin 'Raimondi/delimitMate'
+let g:delimitMate_expand_cr=1
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts=1
+let g:airline_theme='minimalist'
+
+Plugin 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 Plugin 'lervag/vimtex'
 let g:tex_flavor='latex'
@@ -33,7 +44,6 @@ set number
 set smartindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-"colorscheme plain
 colorscheme base16-default-dark
 set termguicolors
 set background=dark
@@ -53,7 +63,3 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-let g:airline_powerline_fonts=1
-let g:airline_theme='minimalist'
-let g:delimitMate_expand_cr=1
-let g:ale_sign_column_always = 1
