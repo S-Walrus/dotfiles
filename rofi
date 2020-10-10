@@ -1,3 +1,4 @@
 configuration {
  modi: "window,drun,ssh,combi";
+ theme: "rofi-theme";
  }
