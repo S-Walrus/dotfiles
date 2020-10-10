@@ -1,6 +1,9 @@
 "####################### PLUGINS #######################"
 
 " Vundle
+" Installation:
+"   git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+"   :PluginInstall
 set nocompatible
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
