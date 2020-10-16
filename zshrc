@@ -1,4 +1,17 @@
+# Variables
+COLOR_DIR=$HOME/.config/alacritty/colors/themes/
+DARK_COLOR=base16_default_dark.yaml
+LIGHT_COLOR=snazzy.yaml
+
+# Defaults
+IMAGE_VIEWER="sxiv -a"
+
 # Aliases
+alias night="alacritty-colorscheme -C $COLOR_DIR -a $DARK_COLOR"
+alias day="alacritty-colorscheme -C $COLOR_DIR -a $LIGHT_COLOR"
+alias repwifi="modprobe -r ath10k_pci && sudo /sbin/modprobe ath10k_pci"
+alias lowrez="xrandr --output eDP-1 --mode 1280x720"
+alias highrez="xrandr --output eDP-1 --mode 1920x1080"
 alias upgrade="sudo apt update && sudo apt upgrade"
 alias doc2pdf='pandoc -o out.pdf -f docx --latex-engine=xelatex --variable mainfont="PT Serif"'
 alias reconnect='nmcli radio wifi off && nmcli radio wifi on'
@@ -6,6 +19,7 @@ alias ipy3=ipython3
 alias c="xclip -selection clipboard"
 alias v="nvim"
 alias q="exit"
+alias im=$IMAGE_VIEWER
 
 # add golang directory to path
 export PATH=$PATH:/usr/local/go/bin

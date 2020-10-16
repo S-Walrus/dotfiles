@@ -1,0 +1,177 @@
+#               b - Beginning of line.
+#               i - In-word expansion.
+#               w - Word boundary.
+#               r - Regular expression
+#               e - Custom context snippet
+#               A - Snippet will be triggered automatically, when condition matches.
+
+snippet beg "begin-end" w
+\\begin{${1:env}}
+	${0:${VISUAL}}
+\\end{$1}
+endsnippet
+
+snippet ali "align" b
+\\begin{align*}
+	${0:${VISUAL}}
+\\end{align*}
+endsnippet
+
+snippet eq "equation" b
+\\begin{equation}
+	${0:${VISUAL}}
+\\end{equation}
+endsnippet
+
+snippet cas "cases" w
+\\begin{cases}
+	${1:equation}, &\\text{ if }${2:case} \\\\
+	${0}
+\\end{cases}
+endsnippet
+
+snippet arr "array" w
+\\begin{array}
+	${1} \\\\
+	${0}
+\\end{array}
+endsnippet
+
+snippet item "itemize" b
+\\begin{itemize}
+	\\item ${0}
+\\end{itemize}
+endsnippet
+
+snippet it "item" w
+\\item ${1:${VISUAL}}
+endsnippet
+
+snippet pmat "pmatrix" w
+\\begin{pmatrix}
+	${1:${VISUAL}}
+\\end{pmatrix}
+endsnippet
+
+snippet sec "section" b
+\\section*{${1:${VISUAL}}}
+${0}
+endsnippet
+
+snippet ni "noindent" b
+\\noindent
+${0}
+endsnippet
+
+snippet ita "italic"
+\\textit{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet bf "bold"
+\\textbf{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet under "underlined"
+\\underline{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet over "overlined"
+\\overline{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet emp "empasize"
+\\emph{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet sc "small caps"
+\\textsc{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet mbb "mathbb"
+\\mathbb{${1:${VISUAL}}}${0}
+endsnippet
+
+snippet lr "left right" w
+\\left${1} ${0:${VISUAL}} \\right${2}
+endsnippet
+
+snippet lr) "( )" w
+\\left( ${1:${VISUAL}} \\right) $0
+endsnippet
+
+snippet // "fraction" i
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)\/' "symbol frac" wr
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+snippet / "Fraction" i
+\\frac{${VISUAL}}{$1}$0
+endsnippet
+
+snippet ceil "ceil" i
+\left\lceil $1 \right\rceil $0
+endsnippet
+
+snippet floor "floor" i
+\left\lfloor $1 \right\rfloor$0
+endsnippet
+
+snippet sum "sum" w
+\sum_{${1:n=1}}^{${2:\infty}} ${0}
+endsnippet
+
+snippet lim "limit" w
+\lim_{${1:n} \to ${2:\infty}} ${0}
+endsnippet
+
+snippet sq "sqrt" i
+\sqrt{${1:${VISUAL}}} $0
+endsnippet
+
+snippet sr "^2" i
+^2
+endsnippet
+
+snippet cb "^3" i
+^3
+endsnippet
+
+snippet pow "power" i
+^{$1}$0
+endsnippet
+
+snippet __ "subscript" i
+_{$1}$0
+endsnippet
+
+snippet ooo "\infty" i
+\infty
+endsnippet
+
+snippet EE "exitst" i
+\exists 
+endsnippet
+
+snippet AA "forall" i
+\forall 
+endsnippet
+
+snippet lll "l" i
+\ell
+endsnippet
+
+snippet xx "cross" i
+\times 
+endsnippet
+
+snippet ** "cdot" i
+\cdot 
+endsnippet
+
+snippet \\\\ "setminus" i
+\setminus
+endsnippet
+
