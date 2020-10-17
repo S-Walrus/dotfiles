@@ -46,6 +46,9 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 "       coc-snippets
 "   Example: :CocInstall coc-python
 
+" Highlight characters searhed for with f
+Plugin 'rhysd/clever-f.vim'
+
 call vundle#end()
 
 
@@ -55,7 +58,7 @@ call vundle#end()
 let mapleader=',' 
 
 " Mouse support
-set mouse=a
+" set mouse=a
 
 " Files
 filetype on
