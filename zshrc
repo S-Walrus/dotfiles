@@ -1,14 +1,9 @@
-# Variables
-COLOR_DIR=$HOME/.config/alacritty/colors/themes/
-DARK_COLOR=base16_default_dark.yaml
-LIGHT_COLOR=snazzy.yaml
-
 # Defaults
-IMAGE_VIEWER="sxiv -a"
+export IMAGE_VIEWER="sxiv -a"
+export TERMINAL="alacritty"
+export BROWSER="brave"
 
 # Aliases
-alias night="alacritty-colorscheme -C $COLOR_DIR -a $DARK_COLOR"
-alias day="alacritty-colorscheme -C $COLOR_DIR -a $LIGHT_COLOR"
 alias repwifi="modprobe -r ath10k_pci && sudo /sbin/modprobe ath10k_pci"
 alias lowrez="xrandr --output eDP-1 --mode 1280x720"
 alias highrez="xrandr --output eDP-1 --mode 1920x1080"
@@ -94,6 +89,9 @@ CASE_SENSITIVE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+# Enable eopkg autocompletion
+# TODO: execute the following if eopkg is present
+source /usr/share/bash-completion/completions/eopkg
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"

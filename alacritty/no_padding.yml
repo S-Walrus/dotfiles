@@ -9,9 +9,9 @@ window:
     x: 512
     y: 256
 
-  padding:
-    x: 16
-    y: 16
+    #padding:
+    #x: 32
+    #y: 32
 
   dynamic_paddings: true
 
@@ -27,39 +27,38 @@ font:
 
 draw_bold_text_with_bright_colors: false
 
-background_opacity: 1
+background_opacity: .90
 
 colors:
-  # COLORSCHEME: base16-material-darker.yml
+  # COLORSCHEME: base16_default_dark.yaml
   # Default colors
   primary:
     # hard contrast: background = '0x1d2021'
-    background: '0x212121'
-    foreground: '0xeeffff'
+    background: '0x181818'
+    foreground: '0xd8d8d8'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   normal:
   # Bright colors
-    black: '0x212121'
-    red: '0xf07178'
-    green: '0xc3e88d'
-    yellow: '0xffcb6b'
-    blue: '0x82aaff'
-    magenta: '0xc792ea'
-    cyan: '0x89ddff'
-    white: '0xeeffff'
+    black: '0x181818'
+    red: '0xab4642'
+    green: '0xa1b56c'
+    yellow: '0xf7ca88'
+    blue: '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan: '0x86c1b9'
+    white: '0xd8d8d8'
 
   # Bright colors
   bright:
-    black: '0x4a4a4a'
-    red: '0xf78c6c'
-    green: '0x303030'
-    yellow: '0x353535'
-    blue: '0xb2ccd6'
-    magenta: '0xeeffff'
-    cyan: '0xff5370'
-    white: '0xffffff'
-
+    black: '0x585858'
+    red: '0xab4642'
+    green: '0xa1b56c'
+    yellow: '0xf7ca88'
+    blue: '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan: '0x86c1b9'
+    white: '0xf8f8f8'
   dim:
     black: '0x31363b'
     red: '0x783228'
@@ -70,8 +69,8 @@ colors:
     cyan: '0x186c60'
     white: '0x63686d'
   cursor:
-    text: '0x212121'
-    cursor: '0xeeffff'
+    text: '0xd8d8d8'
+    cursor: '0xd8d8d8'
 
   # Normal colors
   indexed_colors: []
