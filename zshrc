@@ -3,21 +3,23 @@ export IMAGE_VIEWER="sxiv -a"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 export PDF_VIEWER="mupdf"
+export RSS_READER="newsboat"
 
-# Aliases
-alias en="trans -v -d"
-alias ru="trans -v en:ru"
+# Common software
+alias rss=$RSS_READER
 alias im=$IMAGE_VIEWER
 alias pdf=$PDF_VIEWER
+# Translate
+alias en="trans -v -d"
+alias ru="trans -v en:ru"
+# Resolution change (for Spelunky 2 performance)
 alias lowrez="xrandr --output eDP1 --mode 1280x720"
 alias highrez="xrandr --output eDP1 --mode 1920x1080"
-alias upgrade="sudo apt update && sudo apt upgrade"
+# Other
 alias doc2pdf='pandoc -o out.pdf -f docx --latex-engine=xelatex --variable mainfont="PT Serif"'
 alias reconnect='nmcli radio wifi off && nmcli radio wifi on'
 alias ipy3=ipython3
 alias c="xclip -selection clipboard"
-alias v="nvim"
-alias q="exit"
 
 # add golang directory to path
 export PATH=$PATH:/usr/local/go/bin
