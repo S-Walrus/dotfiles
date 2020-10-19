@@ -33,6 +33,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " LaTeX support
 Plugin 'lervag/vimtex'
+    let g:vimtex_view_general_viewer = 'mupdf'
     let g:tex_flavor='latex'
     set conceallevel=1
     let g:tex_conceal='abdmg'
