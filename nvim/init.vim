@@ -11,8 +11,6 @@ call vundle#begin('~/.config/nvim/bundle')
 " Base
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'KabbAmine/vullScreen.vim'
-
 " Smart indentation for Python
 Plugin 'Vimjas/vim-python-pep8-indent'
 

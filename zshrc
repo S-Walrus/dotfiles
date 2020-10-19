@@ -2,11 +2,15 @@
 export IMAGE_VIEWER="sxiv -a"
 export TERMINAL="alacritty"
 export BROWSER="brave"
+export PDF_VIEWER="mupdf"
 
 # Aliases
-alias repwifi="modprobe -r ath10k_pci && sudo /sbin/modprobe ath10k_pci"
-alias lowrez="xrandr --output eDP-1 --mode 1280x720"
-alias highrez="xrandr --output eDP-1 --mode 1920x1080"
+alias en="trans -v -d"
+alias ru="trans -v en:ru"
+alias im=$IMAGE_VIEWER
+alias pdf=$PDF_VIEWER
+alias lowrez="xrandr --output eDP1 --mode 1280x720"
+alias highrez="xrandr --output eDP1 --mode 1920x1080"
 alias upgrade="sudo apt update && sudo apt upgrade"
 alias doc2pdf='pandoc -o out.pdf -f docx --latex-engine=xelatex --variable mainfont="PT Serif"'
 alias reconnect='nmcli radio wifi off && nmcli radio wifi on'
@@ -14,7 +18,6 @@ alias ipy3=ipython3
 alias c="xclip -selection clipboard"
 alias v="nvim"
 alias q="exit"
-alias im=$IMAGE_VIEWER
 
 # add golang directory to path
 export PATH=$PATH:/usr/local/go/bin
@@ -24,6 +27,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH=$PATH:/home/swalrus/Projects/Utils/
 #export PATH=$PATH:/home/swalrus/.local/share/JetBrains/Toolbox/bin
 #eval $(thefuck --alias)
+
+# Autocompletion
+if [ -f /etc/bash_completion ]; then
+   . /etc/bash_completion
+fi
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/swalrus/.oh-my-zsh"
@@ -90,8 +98,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 # Enable eopkg autocompletion
-# TODO: execute the following if eopkg is present
-source /usr/share/bash-completion/completions/eopkg
+#source /usr/share/bash-completion/completions/eopkg
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
