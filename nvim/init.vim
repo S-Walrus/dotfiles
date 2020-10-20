@@ -33,11 +33,14 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " LaTeX support
 Plugin 'lervag/vimtex'
-    let g:vimtex_view_general_viewer = 'mupdf'
+    let g:vimtex_view_method = 'zathura'
     let g:tex_flavor='latex'
     set conceallevel=1
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
+    let g:vimtex_compiler_latexmk={
+        \ 'build_dir' : 'build'
+      \ }
 
 " Language server with a bunch of IDE-like features
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
