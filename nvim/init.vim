@@ -80,8 +80,13 @@ set scrolloff=1
 
 " Colors
 set termguicolors
+"set background=dark
+" defauld color scheme
 colorscheme base16-material-darker
-set background=dark
+let color_path = expand('~/.config/nvim/color.vim')
+if filereadable(color_path)
+    exec 'source' color_path
+endif
 
 " Encoding
 set encoding=utf-8

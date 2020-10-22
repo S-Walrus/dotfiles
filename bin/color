@@ -1,0 +1,24 @@
+#!/bin/bash
+ThemeDir="$HOME/.config/color"
+
+if [ ! -d $ThemeDir ]; then
+    echo WARNING: $ThemeDir not found
+fi
+
+if [ -d $ThemeDir ] && [ -f "$ThemeDir/$1" ]; then
+    Theme="$ThemeDir/$1"
+elif [ -f "$(pwd)/$1" ]; then
+    Theme=pwd+'/'+$1
+else
+    Theme=-1
+fi
+
+if [ $Theme != -1 ]; then
+    if $(eval $Theme); then
+        echo Complete
+    else
+        echo Script returned error code $?
+    fi
+else
+    echo "Theme script \"$1\" not found"
+fi
