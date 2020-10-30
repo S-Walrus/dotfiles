@@ -1,0 +1,2 @@
+set guioptions "v"
+set selection-clipboard clipboard

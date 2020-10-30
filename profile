@@ -1,3 +1,12 @@
+#!/bin/bash
+
+# Defaults
+export IMAGE_VIEWER="sxiv -a"
+export TERMINAL="alacritty"
+export BROWSER="brave"
+export PDF_VIEWER="zathura"
+export RSS_READER="newsboat"
+
 # Disable capslock functionality
 xmodmap -e "remove lock = Caps_Lock"
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+alacritty-colorscheme -a base16-solarized-dark.yml
+xfconf-query -c xfwm4 -p /general/theme -s "Mc-OS-CTLina-XFCE-Dark"
+xfconf-query -c xsettings -p /Net/ThemeName -s "Mc-OS-CTLina-XFCE-Dark"
+echo colorscheme base16-solarized-dark > $HOME/.config/nvim/color.vim
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitoreDP1/workspace0/last-image -s $HOME/Documents/img/film-hills.jpg

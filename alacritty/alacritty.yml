@@ -30,35 +30,35 @@ draw_bold_text_with_bright_colors: false
 background_opacity: 1
 
 colors:
-  # COLORSCHEME: base16-solarized-light.yml
+  # COLORSCHEME: base16-nord.yml
   # Default colors
   primary:
     # hard contrast: background = '0x1d2021'
-    background: '0xfdf6e3'
-    foreground: '0x586e75'
+    background: '0x2e3440'
+    foreground: '0xe5e9f0'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   normal:
   # Bright colors
-    black: '0xfdf6e3'
-    red: '0xdc322f'
-    green: '0x859900'
-    yellow: '0xb58900'
-    blue: '0x268bd2'
-    magenta: '0x6c71c4'
-    cyan: '0x2aa198'
-    white: '0x586e75'
+    black: '0x2e3440'
+    red: '0xbf616a'
+    green: '0xa3be8c'
+    yellow: '0xebcb8b'
+    blue: '0x81a1c1'
+    magenta: '0xb48ead'
+    cyan: '0x88c0d0'
+    white: '0xe5e9f0'
 
   # Bright colors
   bright:
-    black: '0x839496'
-    red: '0xcb4b16'
-    green: '0xeee8d5'
-    yellow: '0x93a1a1'
-    blue: '0x657b83'
-    magenta: '0x073642'
-    cyan: '0xd33682'
-    white: '0x002b36'
+    black: '0x4c566a'
+    red: '0xd08770'
+    green: '0x3b4252'
+    yellow: '0x434c5e'
+    blue: '0xd8dee9'
+    magenta: '0xeceff4'
+    cyan: '0x5e81ac'
+    white: '0x8fbcbb'
 
   dim:
     black: '0x31363b'
@@ -70,8 +70,8 @@ colors:
     cyan: '0x186c60'
     white: '0x63686d'
   cursor:
-    text: '0xfdf6e3'
-    cursor: '0x586e75'
+    text: '0x2e3440'
+    cursor: '0xe5e9f0'
 
   # Normal colors
   indexed_colors: []
