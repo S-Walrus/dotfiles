@@ -41,6 +41,9 @@ Plugin 'lervag/vimtex'
     let g:vimtex_compiler_latexmk={
         \ 'build_dir' : 'build'
       \ }
+    let g:vimtex_indent_lists=[]
+    let g:vimtex_indent_on_ampersands=0
+    let g:vimtex_indent_enabled=0
 
 " Language server with a bunch of IDE-like features
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}

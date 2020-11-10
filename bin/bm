@@ -1,0 +1,99 @@
+#!/bin/python3
+import argparse
+import os
+import sys
+import re
+import subprocess
+
+BOOKMARKS_PATH = os.environ['HOME'] + '/.bookmarks'
+BROWSER = os.environ['BROWSER']
+
+def silent_run(*command):
+    with open(os.devnull, 'w') as shutup:
+        subprocess.run(command, stdout=shutup, stderr=shutup)
+
+def open_url(*urls):
+    silent_run(BROWSER, *urls)
+
+def open_bookmark(name, bm_reader):
+    url = find_url(name, bm_reader)
+    if url == 1:
+        return 1
+    else:
+        open_url(url)
+
+def get_folder_content(folder, reader):
+    while not next(reader).startswith(f"-- {folder}"):
+        pass
+    res = []
+    for line in reader:
+        if not line.strip():
+            continue
+        if line.startswith('-- '):
+            return res
+        res.append(line.strip())
+    return res
+
+def find_url(bookmark_name, reader):
+    for line in reader:
+        if re.match(bookmark_name + r'\s+http', line):
+            return re.match(r'[a-zA-Z0-9_ ]+\s+(http.+)$',
+                            line.strip()).group(1)
+    return 1
+
+
+parser = argparse.ArgumentParser(description='Simple bookmark manager')
+parser.add_argument('-o', '--open', metavar='NAME', nargs=1, type=str)
+parser.add_argument('-l', '--list', metavar='FOLDER', nargs='?', type=str)
+parser.add_argument('-d', '--dmenu', action='store_true')
+args = parser.parse_args()
+
+count_commands = sum(map(bool, [args.open, args.list, args.dmenu]))
+if count_commands != 1:
+    parser.error(f"bm accepts 1 command per call, "\
+                 f"{count_commands} were given")
+    sys.exit()
+
+bm_reader = open(BOOKMARKS_PATH)
+
+if args.open:
+    if open_bookmark(args.open[0], bm_reader) == 1:
+        parser.error(f"bookmark '{args.open[0]}' was not found")
+
+if args.list:
+    pass
+
+if args.dmenu:
+    options = []
+    folder = ''
+    for line in bm_reader:
+        if line.startswith('-- '):
+            folder = line.strip()[3:]
+            options.append('#' + folder)
+        else:
+            match = re.match(r'([a-zA-Z0-9_ ]+?)\s+https?:', line)
+            if match:
+                options.append(match.group(1) + f" #{folder}")
+    formatted_options = '\n'.join(options)
+    pipe = subprocess.Popen(
+        ['echo', formatted_options],
+        stdout=subprocess.PIPE
+    )
+    choice = subprocess.run(
+        'dmenu',
+        text=True,
+        capture_output=True,
+        stdin=pipe.stdout
+    ).stdout
+    bm_reader.seek(0)
+    if not choice:
+        pass
+    elif choice.startswith('#'):
+        urls = [re.match(r'[a-zA-Z0-9_ ]+?\s+(https?:.+)$', item).group(1)
+                for item in get_folder_content(choice[1:], bm_reader)]
+        open_url(*urls)
+    else:
+        bm_name = choice[:choice.find('#')-1]
+        if open_bookmark(bm_name, bm_reader) == 1:
+            parser.error(f"bookmark '{bm_name}' was not found")
+    

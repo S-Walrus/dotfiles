@@ -1,7 +1,6 @@
 configuration {
     modi: "window,drun,combi";
-    theme: "slate";
-    show-icons: true;
+    theme: "dmenu";
     icon-theme: "Papirus";
     lines: 8;
 }

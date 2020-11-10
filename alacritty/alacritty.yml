@@ -23,7 +23,7 @@ font:
   normal:
     family: JetBrainsMono Nerd Font
 
-  size: 16.0
+  size: 8.0
 
 draw_bold_text_with_bright_colors: false
 
