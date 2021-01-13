@@ -8,7 +8,11 @@ alias ru="trans -v en:ru"
 # Other
 alias ipy3=ipython3
 alias c="xclip -selection clipboard"
+alias r=rover
+alias v=nvim
+alias n=notes
 alias wtf="cht.sh"
+alias bgstream="xwinwrap -ov -fs -- mpv -wid WID -osc=no"
 
 # add golang directory to path
 export PATH=$PATH:/usr/local/go/bin

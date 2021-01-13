@@ -1,14 +1,16 @@
 ############# WM INDEPENDENT HOTKEYS ############# 
 
 # terminal emulator
-super + Return
-    alacritty -t "Floating Alacritty"
-super shift Return
+super Return
     alacritty
 
 # browser
 super w
-    min
+    firefox
+
+# command line
+super r
+    rofi -show run -lines 1
 
 # program launcher
 super d
@@ -18,6 +20,18 @@ super d
 super b
     bm -d
 
+# rofi calculator (requires rofi, rofi-calc)
+super c
+    rofi -show calc
+
+# rofi emoji (requires rofi, rofi-emoji)
+super e
+    rofi -show emoji
+
+# add a task to todoist inbox (requires todoist cli)
+super i
+    todoist a "$(dmenu)"
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -26,6 +40,15 @@ super + Escape
 Print
     import /tmp/screen.png &&\
     mv /tmp/screen.png $HOME/Downloads/$(echo "screen" | dmenu).png
+
+# pick color
+super + grave
+    colorpicker --short --one-shot --preview |\
+    xclip -selection clipboard
+
+# lock screen
+super + space
+    betterlockscreen --lock blur
 
 # sound control
 XF86AudioRaiseVolume 
@@ -40,9 +63,9 @@ XF86AudioMicMute
     pactl set-source-mute @DEFAULT_SOURCE@ toggl
 # brightness control
 XF86MonBrightnessDown
-    brightnessctl --min-val=2 -q set 5%-
+    brightnessctl --min-val=2 -q set 10%-
 XF86MonBrightnessUp
-    brightnessctl -q set 5%+
+    brightnessctl -q set 10%+
 
 
 ############# BSPWM HOTKEYS ############# 

@@ -1,0 +1,30 @@
+#!/bin/bash
+wallpaper_home=$HOME/Images/
+wallpaper_file=$wallpaper_home/wallpaper
+
+while getopts ':s:rdh' arg; do
+  case ${arg} in
+    s)
+      cp "$OPTARG" "$wallpaper_file"
+      $0 -r
+      ;;
+    r)
+      feh --bg-fill "$wallpaper_file"
+      ;;
+    d)
+      $0 -s $wallpaper_home/$(ls $wallpaper_home | dmenu)
+      ;;
+    h)
+      echo "showing usage!"
+      usage
+      ;;
+    :)
+      echo "$0: Must supply an argument to -$OPTARG." >&2
+      exit 1
+      ;;
+    ?)
+      echo "Invalid option: -${OPTARG}."
+      exit 2
+      ;;
+  esac
+done

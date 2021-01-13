@@ -1,2 +1,4 @@
 set guioptions "v"
 set selection-clipboard clipboard
+
+include zathura-solarized-light

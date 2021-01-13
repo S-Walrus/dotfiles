@@ -57,6 +57,11 @@ snippet sec "section" b
 ${0}
 endsnippet
 
+snippet par "paragraph" b
+\\paragraph{${1:${VISUAL}}}
+${0}
+endsnippet
+
 snippet ni "noindent" b
 \\noindent
 ${0}
@@ -104,10 +109,6 @@ endsnippet
 
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)\/' "symbol frac" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
-endsnippet
-
-snippet / "Fraction" i
-\\frac{${VISUAL}}{$1}$0
 endsnippet
 
 snippet ceil "ceil" i

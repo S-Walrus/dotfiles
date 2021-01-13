@@ -1,6 +1,7 @@
 configuration {
-    modi: "window,drun,combi";
-    theme: "dmenu";
+    modi: "drun,calc,run,emoji";
+    show-icons: false;
     icon-theme: "Papirus";
     lines: 8;
+    width: 32;
 }

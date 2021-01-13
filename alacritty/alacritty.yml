@@ -30,48 +30,34 @@ draw_bold_text_with_bright_colors: false
 background_opacity: 1
 
 colors:
-  # COLORSCHEME: base16-nord.yml
   # Default colors
   primary:
-    # hard contrast: background = '0x1d2021'
-    background: '0x2e3440'
-    foreground: '0xe5e9f0'
+    background: '#002b36' # base03
+    foreground: '#839496' # base0
 
-  # Colors the cursor will use if `custom_cursor_colors` is true
+  # Cursor colors
+  cursor:
+    text: '#002b36' # base03
+    cursor: '#839496' # base0
+
+  # Normal colors
   normal:
-  # Bright colors
-    black: '0x2e3440'
-    red: '0xbf616a'
-    green: '0xa3be8c'
-    yellow: '0xebcb8b'
-    blue: '0x81a1c1'
-    magenta: '0xb48ead'
-    cyan: '0x88c0d0'
-    white: '0xe5e9f0'
+    black: '#073642' # base02
+    red: '#dc322f' # red
+    green: '#859900' # green
+    yellow: '#b58900' # yellow
+    blue: '#268bd2' # blue
+    magenta: '#d33682' # magenta
+    cyan: '#2aa198' # cyan
+    white: '#eee8d5' # base2
 
   # Bright colors
   bright:
-    black: '0x4c566a'
-    red: '0xd08770'
-    green: '0x3b4252'
-    yellow: '0x434c5e'
-    blue: '0xd8dee9'
-    magenta: '0xeceff4'
-    cyan: '0x5e81ac'
-    white: '0x8fbcbb'
-
-  dim:
-    black: '0x31363b'
-    red: '0x783228'
-    green: '0x17a262'
-    yellow: '0xb65619'
-    blue: '0x1b668f'
-    magenta: '0x614a73'
-    cyan: '0x186c60'
-    white: '0x63686d'
-  cursor:
-    text: '0x2e3440'
-    cursor: '0xe5e9f0'
-
-  # Normal colors
-  indexed_colors: []
+    black: '#002b36' # base03
+    red: '#cb4b16' # orange
+    green: '#586e75' # base01
+    yellow: '#657b83' # base00
+    blue: '#839496' # base0
+    magenta: '#6c71c4' # violet
+    cyan: '#93a1a1' # base1
+    white: '#fdf6e3' # base3

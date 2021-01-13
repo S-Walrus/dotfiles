@@ -18,8 +18,8 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'chriskempson/base16-vim'
 
 " Linter
-Plugin 'w0rp/ale'
-    let g:ale_sign_column_always = 1
+"Plugin 'w0rp/ale'
+    "let g:ale_sign_column_always = 1
 
 " Closes brackets for me
 Plugin 'Raimondi/delimitMate'
@@ -54,7 +54,8 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 "   Example: :CocInstall coc-python
 
 " Highlight characters searhed for with f
-Plugin 'rhysd/clever-f.vim'
+Plugin 'unblevable/quick-scope'
+    let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 call vundle#end()
 
