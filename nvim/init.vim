@@ -17,10 +17,6 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 " Color scheme
 Plugin 'chriskempson/base16-vim'
 
-" Linter
-"Plugin 'w0rp/ale'
-    "let g:ale_sign_column_always = 1
-
 " Closes brackets for me
 Plugin 'Raimondi/delimitMate'
     let g:delimitMate_expand_cr=1
@@ -35,7 +31,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lervag/vimtex'
     let g:vimtex_view_method = 'zathura'
     let g:tex_flavor='latex'
-    set conceallevel=1
+    set conceallevel=2
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
     let g:vimtex_compiler_latexmk={
@@ -53,9 +49,8 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 "       coc-snippets
 "   Example: :CocInstall coc-python
 
-" Highlight characters searhed for with f
-Plugin 'unblevable/quick-scope'
-    let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" GLSL
+Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 
@@ -74,13 +69,18 @@ filetype plugin indent on
 
 " Editor
 set ruler
-set cursorline
+"set cursorline
 set number relativenumber   "relative numbers
 " 4 spaces per tab
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=1
+
+" Clear some highlight
+autocmd ColorScheme * highlight clear LineNr
+autocmd ColorScheme * highlight clear SignColumn
+autocmd ColorScheme * highlight clear CursorLineNr
 
 " Colors
 set termguicolors

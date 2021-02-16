@@ -8,9 +8,13 @@ super Return
 super w
     firefox
 
+# search in browser
+super s
+    firefox "https://duckduckgo.com/?q=$(dmenu)"
+
 # command line
 super r
-    rofi -show run -lines 1
+    $(dmenu)
 
 # program launcher
 super d
@@ -18,11 +22,11 @@ super d
 
 # bookmarks manager
 super b
-    bm -d
+    bmd -d
 
-# rofi calculator (requires rofi, rofi-calc)
-super c
-    rofi -show calc
+# ebook launcher
+super o
+    exo-open $HOME/Books/$(ls $HOME/Books | dmenu)
 
 # rofi emoji (requires rofi, rofi-emoji)
 super e

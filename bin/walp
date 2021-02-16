@@ -1,22 +1,29 @@
 #!/bin/bash
-wallpaper_home=$HOME/Images/
+wallpaper_home=$HOME/Images
 wallpaper_file=$wallpaper_home/wallpaper
+wallpaper_tile_file=$wallpaper_home/wallpaper_tile
 
-while getopts ':s:rdh' arg; do
+tile=false
+target=''
+action='none'
+
+while getopts ':s:rdht' arg; do
   case ${arg} in
     s)
-      cp "$OPTARG" "$wallpaper_file"
-      $0 -r
+      action='set'
+      target=$OPTARG
       ;;
     r)
-      feh --bg-fill "$wallpaper_file"
+      action='reset'
       ;;
     d)
-      $0 -s $wallpaper_home/$(ls $wallpaper_home | dmenu)
+      action='dmenu'
       ;;
     h)
-      echo "showing usage!"
-      usage
+      action='help'
+      ;;
+    t)
+      tile=true
       ;;
     :)
       echo "$0: Must supply an argument to -$OPTARG." >&2
@@ -28,3 +35,34 @@ while getopts ':s:rdh' arg; do
       ;;
   esac
 done
+
+case $action in
+  set)
+    action='set'
+    rm -f $wallpaper_file
+    rm -f $wallpaper_tile_file
+    if [ $tile == true ]; then
+      cp "$target" "$wallpaper_tile_file"
+    else
+      cp "$target" "$wallpaper_file"
+    fi
+    $0 -r
+    ;;
+  reset)
+    action='reset'
+    if [ -f $wallpaper_tile_file ]; then
+      feh --bg-tile "$wallpaper_tile_file"
+    elif [ -f $wallpaper_file ]; then
+      feh --bg-fill "$wallpaper_file"
+    else
+      echo "wallpaper file not found in $wallpaper_home"
+    fi
+    ;;
+  dmenu)
+    action='dmenu'
+    $0 -s $wallpaper_home/$(ls $wallpaper_home | dmenu)
+    ;;
+  help)
+    echo "not implemented"
+    ;;
+esac
