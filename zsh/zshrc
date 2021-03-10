@@ -1,0 +1,28 @@
+# Other
+alias ipy3=ipython3
+alias c="xclip -selection clipboard"
+alias v=nvim
+alias wtf="cht.sh"
+alias bgstream="xwinwrap -ov -fs -- mpv -wid WID -osc=no"
+
+# Prompt
+export PROMPT="%(?..%F{red}%?) %f%B%F{blue}%1~%f%b "
+
+# Plugins
+
+# Autocompletion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
+# Aliases
+alias ls="ls --color"
+alias la="ls -lAFh"
+alias grep="grep --color"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Bindings
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word

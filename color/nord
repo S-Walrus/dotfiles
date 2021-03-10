@@ -1,6 +1,0 @@
-#!/bin/bash
-alacritty-colorscheme -a base16-nord.yml
-xfconf-query -c xfwm4 -p /general/theme -s "Nordic"
-xfconf-query -c xsettings -p /Net/ThemeName -s "Nordic"
-echo colorscheme base16-nord > $HOME/.config/nvim/color.vim
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitoreDP1/workspace0/last-image -s $HOME/Documents/img/rainy-mountains.jpg

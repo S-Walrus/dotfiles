@@ -1,6 +1,0 @@
-#!/bin/bash
-alacritty-colorscheme -a base16-solarized-light.yml
-xfconf-query -c xfwm4 -p /general/theme -s "McOS-CTLina-XFCE"
-xfconf-query -c xsettings -p /Net/ThemeName -s "McOS-CTLina-XFCE"
-echo colorscheme base16-solarized-light > $HOME/.config/nvim/color.vim
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitoreDP1/workspace0/last-image -s $HOME/Documents/img/film-wall.jpg

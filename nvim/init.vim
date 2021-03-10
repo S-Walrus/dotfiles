@@ -52,6 +52,10 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 " GLSL
 Plugin 'tikhomirov/vim-glsl'
 
+" Writing mode
+Plugin 'junegunn/goyo.vim'
+Plugin 'reedes/vim-pencil'
+
 call vundle#end()
 
 

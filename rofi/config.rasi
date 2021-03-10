@@ -4,4 +4,6 @@ configuration {
     icon-theme: "Papirus";
     lines: 8;
     width: 32;
+    case-sensitive: false;
+    sorting-method: "fzf";
 }

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Defaults
 export EDITOR="nvim"
@@ -11,3 +11,4 @@ export OPEN="exo-open"
 
 # Path
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH

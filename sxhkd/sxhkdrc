@@ -24,6 +24,10 @@ super d
 super b
     bmd -d
 
+# calculator
+super c
+    rofi -show calc
+
 # ebook launcher
 super o
     exo-open $HOME/Books/$(ls $HOME/Books | dmenu)

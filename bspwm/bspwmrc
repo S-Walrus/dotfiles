@@ -11,9 +11,9 @@ bspc config gapless_monocle      false
 
 ########### RULES ###########
 # Browsers
-bspc rule -a Brave-browser desktop='^3'
+bspc rule -a Brave-browser desktop='^3' border=off
 bspc rule -a Min desktop='^3'
-bspc rule -a firefox desktop='^3'
+bspc rule -a firefox desktop='^3' border=off
 # Social
 bspc rule -a TelegramDesktop desktop='^4'
 bspc rule -a zoom desktop='^4'
@@ -33,8 +33,8 @@ dunst &
 picom &
 sxhkd &
 redshift &
-xrandr --output eDP1 --mode 1920x1080 && walp -r
-setxkbmap -layout us,ru -option grp:caps_toggle
-xset s off
-$(cat $HOME/.config/polybar/current) &
-megasync &
+xrandr --output eDP1 --mode 1920x1080 && walp -r  # set correct screen resolution
+setxkbmap -layout us,ru -option grp:caps_toggle  # caps changes layout
+$(cat $HOME/.config/polybar/current) &  # polybar
+megasync &  # MEGA cloud
+/home/swalrus/bin/uxplay &  # IPhone screen sharing
